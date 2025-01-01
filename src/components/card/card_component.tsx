@@ -1,7 +1,15 @@
 import "./card.css";
 
-const Card = ({ monsters }) => {
-  const { id, name, email } = monsters;
+import {Monster} from '../../App'
+import { useEffect } from "react";
+
+type CardProp = {
+  monster: Monster
+}
+
+
+const Card = ({ monster }: CardProp) => {
+  const { id, name, email } = monster;
   return (
     <div className="card-container" key={id}>
       <img
